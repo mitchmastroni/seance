@@ -41,6 +41,8 @@ bool Radio:: drawerStatus (int drawer){
 }
 
 double Radio:: tuner (){
+	cout << "--arduino.getStation\n";
+	cin >> station;
 	return station;
 }
 
@@ -69,6 +71,20 @@ int _tmain(int argc, _TCHAR* argv[])
 	Radio radio;
 
 	cout << "Welcome to Seance\n\n";
-	cout << 
-};
+	//wait
+	cout << "The radio crackles to life and begins playing an odd tune...\n";
+	bool puzzle1Solved = false;
+	double station [3]  = {90.7, 101.7, 99.7};
+	for (int i = 0; i < 3; i++){
+		bool answer = false;
+		while (!answer){
+			cout << "waiting for answer...\n";
+			double currStation = radio.tuner();
+			if (currStation == station[i]){
+				answer = true;
+			}
+		}
+		cout << "A new song begins to play...\n";
+	}
+}
 
