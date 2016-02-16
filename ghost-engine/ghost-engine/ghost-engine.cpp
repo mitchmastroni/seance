@@ -42,7 +42,11 @@ bool Radio:: drawerStatus (int drawer){
 
 double Radio:: tuner (){
 	cout << "--arduino.getStation\n";
-	cin >> station;
+	while(!(cin >> station)){
+		cout << "Bad value!/n";
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
 	return station;
 }
 
@@ -86,5 +90,27 @@ int _tmain(int argc, _TCHAR* argv[])
 		}
 		cout << "A new song begins to play...\n";
 	}
+	radio.openDrawer(1);
+	if (radio.drawerStatus(1) == true){
+		cout << "...a note and a map.\n";
+	} else {
+		cout << "Something has gone wrong with Radio Drawer #1.\n";
+	}
+	bool answer = false;
+	int combo = 5489;
+	while (!answer){
+		cout << "waiting for answer...\n";
+		int attempt;
+		while(!(cin >> attempt)){
+			cout << "Bad value!\n";
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+		if (attempt == combo){
+			answer = true;
+		}
+	}
+	"The drawer opens up! It contains pages from the journal.\n";
+	cin >> start;
 }
 
