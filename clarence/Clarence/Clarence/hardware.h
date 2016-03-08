@@ -1,10 +1,10 @@
 #pragma once
-ref class hardware
+ref class Hardware
 {
 protected:
 	bool connected;
 public:
 	bool connect(int);
 	bool isConnected();
-	hardware();
+	Hardware();
 };

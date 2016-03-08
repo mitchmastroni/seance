@@ -1,17 +1,17 @@
 #include "stdafx.h"
-#include "hardware.h"
+#include "Hardware.h"
 
 
-hardware::hardware()
+Hardware::Hardware()
 {
 
 }
 
-bool hardware::connect(int port) {
+bool Hardware::connect(int port) {
 	//initialize connection at COM-port
 	return connected;
 }
 
-bool hardware::isConnected() {
+bool Hardware::isConnected() {
 	return connected;
 }

@@ -1,9 +1,16 @@
 // Clarence.cpp : main project file.
 
 #include "stdafx.h"
+#include "Hardware.h"
+#include "Radio.h"
+//#include "fmod_studio.h"
+
+//FMOD::Studio::System* fmodSystem;
+
 
 using namespace System;
 using namespace System::IO::Ports;
+
 
 int main(array<System::String ^> ^args)
 {

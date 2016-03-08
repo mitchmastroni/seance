@@ -1,6 +1,6 @@
 #pragma once
 #include "hardware.h"
-ref class Radio : public hardware {
+ref class Radio : public Hardware {
 private:
 	array<bool> ^drawers;
 	double station;
