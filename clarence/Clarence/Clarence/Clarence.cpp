@@ -4,6 +4,8 @@
 #include "Hardware.h"
 #include "Radio.h"
 //#include "fmod_studio.h"
+#include <Windows.h>
+#include <MMSystem.h>
 
 //FMOD::Studio::System* fmodSystem;
 
@@ -17,6 +19,9 @@ int main(array<System::String ^> ^args)
     String^ answer;
 	String^ portName;
 	int baudRate=9600;
+
+	PlaySound("C:\\Users\\Commander\\Desktop\\test1.wav", NULL, SND_FILENAME);
+
 	Console::WriteLine("Type in a port name and hit ENTER");
 	portName=Console::ReadLine();
 	// arduino settings
@@ -30,6 +35,7 @@ int main(array<System::String ^> ^args)
 		{
 			//Console::WriteLine("Type to talk to the arduino!");
 			// get answer
+
 			answer=Console::ReadLine();
 			//send the line to the arduino
 			arduino->WriteLine(answer);
