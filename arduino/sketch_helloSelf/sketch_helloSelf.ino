@@ -1,3 +1,5 @@
+const int potPin = 2;
+
 void setup() {
   // put your setup code here, to run once:
   // Initialize serial communication with computer
@@ -10,7 +12,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // put your main code here, to run repeatedly:  blink(10)
   
   // PARSER
   // Checks if there is a new line to parse
@@ -44,7 +46,11 @@ void loop() {
         digitalWrite(13, LOW);
         delay(500);
       }
-    } else {
+    } else if (function == "radio"){
+      unsigned long station = analogRead(potPin);
+      station = ((station * 173)/1023) + 850;
+      Serial.println(String(station));
+    }else{
       Serial.println("Error! Command not recognized.");
     }
 

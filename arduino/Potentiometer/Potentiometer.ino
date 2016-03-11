@@ -4,7 +4,7 @@ const int LEDPin = 13;
 
 // Set initial station and goal station
 unsigned long station = 0;
-const unsigned long stationGoal[3] = {977, 1017, 997};
+const unsigned long stationGoal[3] = {977, 867, 997};
 int stationIter = 0;
 
 
@@ -26,13 +26,18 @@ void loop() {
   if(station == stationGoal[stationIter]){
     Serial.println("Tuned!");
     //Quick blink when target signal reached
-    for (int i = 0; i < 3; i ++){
-      digitalWrite(LEDPin, HIGH);
-      delay(50);
-      digitalWrite(LEDPin, LOW);
-      delay(10);
+    //for (int i = 0; i < 3; i ++){
+    //  digitalWrite(LEDPin, HIGH);
+    //  delay(100);
+    //  digitalWrite(LEDPin, LOW);
+    // delay(10);
+    //}
+    if(stationIter == 2){
+     digitalWrite(LEDPin, HIGH);  
+     delay(1000);
+     digitalWrite(LEDPin, LOW);
     }
-    stationIter++;
+     stationIter++;
   }
  
 }

@@ -1,9 +1,18 @@
 #include "stdafx.h"
 #include "Radio.h"
 
+//using namespace System;
+//using namespace System::IO::Ports;
 
 Radio::Radio() {
-	connected = 1;
+	//int radioBaudRate = 9600;
+	//String^ radioPortName;
+
+	//Console::WriteLine("Type in a port name for the Radio and hit ENTER");
+	//radioPortName = Console::ReadLine();
+	//SerialPort^ radio;
+	//radio = gcnew SerialPort(radioPortName, radioBaudRate);
+
 	drawers = gcnew array<bool>(2);
 	drawers[0] = drawers[1] = false;
 	//These two values are arbitrary
