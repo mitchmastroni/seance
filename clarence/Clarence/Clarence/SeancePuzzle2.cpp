@@ -39,9 +39,9 @@ while (!solvedTwo) {
 	//Code here should be with Cross's RFiD sticker on Sun Symbol on SpiritBox
 	//to open SpiritBox. 
 
-	Console::WriteLine("all solved!");
+	//Console::WriteLine("all solved!");
 	//open Sun drawer
-	radio->WriteLine("blink(2)");
+	//radio->WriteLine("blink(2)");
 
 	//loop for the symbol combination. Press Enter to exit loop
 	while (!Console::Read()) {
