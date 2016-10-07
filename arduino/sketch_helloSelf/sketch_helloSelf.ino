@@ -12,8 +12,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:  blink(10)
-  
   // PARSER
   // Checks if there is a new line to parse
    if (Serial.available() > 0) {
@@ -39,7 +37,7 @@ void loop() {
       Serial.println("Turning LED off!");
       digitalWrite(13, LOW);
     } else if (function == "blink"){
-      Serial.println("Blinking " + String(val) + " times...");
+      //Serial.println("Blinking " + String(val) + " times...");
       for (int i = 0; i < val; i++){
         digitalWrite(13, HIGH);
         delay(500);
@@ -48,7 +46,10 @@ void loop() {
       }
     } else if (function == "radio"){
       unsigned long station = analogRead(potPin);
-      station = ((station * 173)/1023) + 850;
+      // f(x) = a + ((b-a)*(x-min))/(max-min)
+      // where min/max are pot reads
+      // and a/b are radio stations
+      station = 878 + ((1080 - 878)*(station-6))/(956-6);
       Serial.println(String(station));
     }else{
       Serial.println("Error! Command not recognized.");

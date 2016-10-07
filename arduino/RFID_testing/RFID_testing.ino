@@ -109,7 +109,7 @@ void loop(void) {
   if (success) {
     // Display some basic information about the card
     Serial.println("Found an ISO14443A card");
-    Serial.print("  UID Length: ");Serial.print(uidLength, DEC);Serial.println(" bytes");
+    //Serial.print("  UID Length: ");Serial.print(uidLength, DEC);Serial.println(" bytes");
     Serial.print("  UID Value: ");
     nfc.PrintHex(uid, uidLength);
     Serial.println("");
@@ -169,9 +169,9 @@ void loop(void) {
       Serial.println("Seems to be a Mifare Ultralight tag (7 byte UID)");
 	  
       // Try to read the first general-purpose user page (#4)
-      Serial.println("Reading page 4");
+      Serial.println("Reading page 5");
       uint8_t data[32];
-      success = nfc.mifareultralight_ReadPage (4, data);
+      success = nfc.mifareultralight_ReadPage (5, data);
       if (success)
       {
         // Data seems to have been read ... spit it out
